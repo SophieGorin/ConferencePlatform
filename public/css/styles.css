@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+    background-image: url(back.jpg); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+}
+
+header{
+    height: 86px;
+    background-color: #020977;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #DDDDDD;
+}
+
+header img{
+    width: 138px;
+    height: 77px;
+    margin-left: 41px;
+}
+.user_log{
+    display: flex;
+    align-items: center;
+}
+
+#user-info{
+    padding-right: 15px;
+}
+
+input, select{
+    width: 336px;
+    height: 50px;
+    border: #DDDDDD 1px solid;
+    border-radius: 4px;
+    color: #B1ADAD; 
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+button{
+    width: 300px;
+    height: 55px;
+    background-color: #020977;
+    border: #020977 1px solid;
+    border-radius: 4px;
+    text-align: center;
+    color: #fff;
+    font-weight: 600;
+    font-size: 20px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.container{
+    background-color: #DDDDDD;  
+    width: 586px;
+    height: 487px;
+    border: #CDCDCD 2px solid;
+    border-radius: 10px;
+    margin: 140px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.Reg_container{
+    background-color: #DDDDDD;  
+    width: 586px;
+    height: 604px;
+    border: #CDCDCD 2px solid;
+    border-radius: 10px;
+    margin: 100px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.order_container{
+    background-color: #DDDDDD;  
+    width: 586px;
+    height: 804px;
+    border: #CDCDCD 2px solid;
+    border-radius: 10px;
+    margin: 100px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form{
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reg_form{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap:18px;
+    align-items: center;
+}
+
+form a{
+    margin-top: -5px;
+    color: #646df1;
+    font-size: 16px;
+}
+
+/* Стили для таблицы */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #9DA0D0;
+}
+
+table th {
+    background-color: #e0e0fc;
+    font-weight: bold;
+}
+
+table tr:hover {
+    background-color: #b9bce4;
+}
+
+/* Стили для контейнера */
+.history_container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #e0e0fc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.history-button{
+    margin-top: 10px;
+}
+
+/* Медиа-запрос для устройств с шириной экрана до 768px (типичные мобильные устройства) */
+@media (max-width: 768px) {
+    body{
+        background-repeat: repeat;
+    }
+
+    header {
+        height: auto;
+        padding: 10px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header img {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .user_log {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #user-info {
+        padding-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .container, .Reg_container, .order_container {
+        width: 90%;
+        height: auto;
+        margin: 20px auto;
+        padding: 20px;
+    }
+
+    .form, .reg_form {
+        margin-top: 20px;
+    }
+
+    input, select {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    button {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    table th, table td {
+        padding: 8px;
+    }
+
+    .history_container {
+        padding: 10px;
+    }
+
+    .history-button, .create-order-button {
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+}
+
+/* Медиа-запрос для устройств с шириной экрана до 480px (очень маленькие экраны) */
+@media (max-width: 480px) {
+
+    body{
+        background-repeat: repeat;
+    }
+
+    header{
+        width: 100%;
+    }
+    header img {
+        width: 100px;
+        height: auto;
+    }
+
+    .container, .Reg_container, .order_container {
+        width: 95%;
+        margin: 10px auto;
+    }
+
+    input, select {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    table th, table td {
+        padding: 6px;
+    }
+
+    .history_container {
+        padding: 5px;
+    }
+}

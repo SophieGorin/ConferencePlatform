@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Order</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <div>
+            <img class="logo" src="/css/cleaning.svg" alt="logo">
+        </div>
+        <div class="user_log">
+            <div id="user-info">Loading...</div>
+            <!-- Кнопка выхода -->
+            <button id="logoutButton" class="logout-button">Выйти</button>
+        </div>
+    </header>
+    <div class="order_container">
+        <div class="form">
+            <h1>Оставить заявку</h1>
+            <form id="orderForm">
+                <input type="text" id="userName" name="userName" placeholder="Введите ФИО" required>
+                <select id="serviceName" name="serviceName">
+                    <option value="" disabled selected>Выберите услугу...</option>
+                </select>
+                <input type="text" id="customService" name="customService" placeholder="Введите описание услуги">
+                <input type="text" id="address" name="address" placeholder="Введите адрес" required>
+                <input type="tel" id="phone" name="phone" placeholder="Введите телефон" required>
+                <input type="datetime-local" id="dateTime" name="dateTime" required>
+                <label for="paymentType">Тип оплаты</label>
+                <select id="paymentType" name="paymentType" required>
+                    <option value="card">Карта</option>
+                    <option value="cash">Наличные</option>
+                </select>
+                <button type="submit">Оставить заявку</button>
+            </form>
+            <!-- Кнопка для перехода на страницу истории заказов -->
+            <a href="/history.html" class="history-button">Перейти к истории заказов</a>
+        </div>
+        <div id="responseMessage" style="text-align:center; margin-top:20px;"></div>
+    </div>
+    <script src="/js/create_order.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const user = JSON.parse(localStorage.getItem('user'));
+            if (user) {
+                document.getElementById('user-info').textContent = user.full_name;
+            } else {
+                document.getElementById('user-info').textContent = 'Гость';
+            }
+
+            // Обработчик для кнопки выхода
+            document.getElementById('logoutButton').addEventListener('click', () => {
+                localStorage.removeItem('user'); // Удаляем данные пользователя
+                window.location.href = '/login.html'; // Перенаправляем на страницу входа
+            });
+        });
+    </script>
+</body>
+</html>

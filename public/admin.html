@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Панель администратора</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <div>
+            <img class="logo" src="/css/cleaning.svg" alt="logo">
+        </div>
+        <div class="user_log">
+            <div id="user-info">Loading...</div>
+            <!-- Кнопка выхода -->
+            <button id="logoutButton" class="logout-button">Выйти</button>
+        </div>
+    </header>
+    <div class="history_container">
+        <h1>Управление заявками</h1>
+        <table id="adminPanel">
+            <thead>
+                <tr>
+                    <th>Номер заявки</th>
+                    <th>Дата и время</th>
+                    <th>Вид услуги</th>
+                    <th>Описание услуги</th> <!-- Новая колонка -->
+                    <th>Статус</th>
+                    <th>Причина отмены</th>
+                    <th>Действия</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Данные будут добавлены с помощью JavaScript -->
+            </tbody>
+        </table>
+    </div>
+    <script src="/js/admin.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const user = JSON.parse(localStorage.getItem('user'));
+            if (user) {
+                document.getElementById('user-info').textContent = user.full_name;
+            } else {
+                document.getElementById('user-info').textContent = 'Гость';
+            }
+
+            // Обработчик для кнопки выхода
+            document.getElementById('logoutButton').addEventListener('click', () => {
+                localStorage.removeItem('user'); // Удаляем данные пользователя
+                window.location.href = '/login.html'; // Перенаправляем на страницу входа
+            });
+        });
+    </script>
+</body>
+</html>
